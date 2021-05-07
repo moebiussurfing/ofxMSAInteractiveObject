@@ -17,18 +17,18 @@ void testApp::draw() {
 	else ofClear(bState1 ? ofColor::black : ofColor::white);
 
 	stringstream s;
-	s << "isMouseOver: " << clicker.isMouseOver() << endl;
-	s << "isMousePressed(0): " << clicker.isMousePressed(0) << endl;
-	s << "isMousePressed(1): " << clicker.isMousePressed(1) << endl;
-	s << "isMousePressed(2): " << clicker.isMousePressed(2) << endl;
-	s << "getStateChangeMillis(): " << clicker.getStateChangeMillis() << endl;
-	s << endl;
 	s << "DoubleClick changes color." << endl;
-	s << "TripleClick changes RGB / Black&White." << endl;
+	s << "TripleClick changes RGB/Black&White." << endl;
 	s << "number Clicks: " << clicker.clickCounter << endl;
 	//NOTE:can't check these easycallbakcs twice on same frame
 	//s << "doubleClicked: " << "[" << (obj.isMouseDoubleClick() ? "x" : " ") << "]" << endl;
 	//s << "tripleClicked: " << "[" << (obj.isMouseTripleClick() ? "x" : " ") << "]" << endl;
+	s << endl;
+	s << "isMouseOver: " << clicker.isMouseOver() << endl;
+	s << "isMousePressed(0): " << clicker.isMousePressed(0) << endl;
+	s << "isMousePressed(1): " << clicker.isMousePressed(1) << endl;
+	s << "isMousePressed(2): " << clicker.isMousePressed(2) << endl;
+	s << "getStateChangeMillis(): " << clicker.getStateChangeMillis();
 	ofDrawBitmapStringHighlight(s.str(), 10, 30);
 }
 

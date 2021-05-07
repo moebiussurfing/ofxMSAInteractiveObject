@@ -1,12 +1,13 @@
 /********  Test sample for ofxInteractiveObject									********/
 /********  Make sure you open your console to see all the events being output	********/
 
+// added doubleClick by moebiusSurfing
 
 #pragma once
 
 #include "ofxMSAInteractiveObject.h"
 
-class doubleClicker : public ofxMSAInteractiveObject {
+class DoubleClicker : public ofxMSAInteractiveObject {
 private:
 	ofColor	IDLE_COLOR;
 	ofColor	OVER_COLOR;
@@ -15,18 +16,36 @@ private:
 	ofColor	DOUBLE2_COLOR;
 	ofColor	DOUBLE3_COLOR;
 	ofColor	DOUBLE4_COLOR;
+	int alpha = 128;
 
 	bool bDoubleClicked = false;
 	bool bTripleClicked = false;
 	int timerClick = 0;
 	int timerMin = 50;
-	int timerMax = 500;
+	int timerMax = 300;
 	bool bDebug = true;
+
 public:
 	int clickCounter = 0;
 	//--------------------------------------------------------------
 	void setDebug(bool b) {
 		bDebug = b;
+	}	
+	//--------------------------------------------------------------
+	void setAlpha(int a) {
+		alpha = a;
+	}	
+	//--------------------------------------------------------------
+	void setColorDOUBLE1_COLOR(ofColor c) {
+		DOUBLE1_COLOR = c;
+	}	
+	//--------------------------------------------------------------
+	void setColorDOUBLE2_COLOR(ofColor c) {
+		DOUBLE2_COLOR = c;
+	}	
+	//--------------------------------------------------------------
+	void setColorDOUBLE3_COLOR(ofColor c) {
+		DOUBLE3_COLOR = c;
 	}
 	//--------------------------------------------------------------
 	bool isMouseDoubleClick() {
@@ -46,13 +65,13 @@ public:
 	}
 
 	void setup() {
-		IDLE_COLOR = ofColor(100);
-		OVER_COLOR = ofColor(150);
-		DOWN_COLOR = ofColor(200);
-		DOUBLE1_COLOR = ofColor(ofColor::yellow);
-		DOUBLE2_COLOR = ofColor(ofColor::green);
-		DOUBLE3_COLOR = ofColor(ofColor::blue);
-		DOUBLE4_COLOR = ofColor(ofColor::black);
+		IDLE_COLOR = ofColor(100, alpha);
+		OVER_COLOR = ofColor(150, alpha);
+		DOWN_COLOR = ofColor(200, alpha);
+		DOUBLE1_COLOR = ofColor(ofColor::yellow, alpha);
+		DOUBLE2_COLOR = ofColor(ofColor::green, alpha);
+		DOUBLE3_COLOR = ofColor(ofColor::blue, alpha);
+		DOUBLE4_COLOR = ofColor(ofColor::black, alpha);
 
 		ofLogVerbose(__FUNCTION__) << "hello!\n";
 		enableMouseEvents();

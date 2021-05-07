@@ -4,13 +4,13 @@
 
 #include "ofMain.h"
 
-#include "doubleClicker.h"
+#include "DoubleClicker.h"
 
 class testApp : public ofBaseApp {
 	
 public:
 	
-	doubleClicker clicker;
+	DoubleClicker clicker;
 	void setup();
     void draw();
 

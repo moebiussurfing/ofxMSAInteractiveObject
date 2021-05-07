@@ -186,7 +186,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
-		<ClInclude Include="..\..\..\addons\ofxMSAInteractiveObject\src\doubleClicker.h" />
+		<ClInclude Include="..\..\..\addons\ofxMSAInteractiveObject\src\DoubleClicker.h" />
 		<ClInclude Include="..\..\..\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.h" />
 	</ItemGroup>
 	<ItemGroup>
