@@ -42,8 +42,7 @@ public:
     
 	bool isMouseOver() const;                     // returns true if mouse is over object (based on position and size)
 	bool isMousePressed(int mouseButton=0) const;    // returns true if mouse button is down and was pressed over object (based on position and size)
-    
-    
+
 	int	 getMouseX() const;                       // returns mouse X (in screen coordinates)
 	int  getMouseY() const;                       // returns mouse Y (in screen coordinates)
     

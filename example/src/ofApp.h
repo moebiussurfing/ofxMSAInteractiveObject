@@ -4,15 +4,18 @@
 
 #include "ofMain.h"
 
-#include "MyTestObject.h"
+#include "doubleClicker.h"
 
 class testApp : public ofBaseApp {
 	
 public:
 	
-	MyTestObject obj;
+	doubleClicker clicker;
 	void setup();
     void draw();
+
+	bool bState1 = false;
+	bool bState2 = false;
 };
 
 #endif

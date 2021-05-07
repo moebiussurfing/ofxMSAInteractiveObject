@@ -207,3 +207,5 @@ Android.mk
 !android/*/.project
 !android/*/.settings
 !android/*/.settings/*
+example/config.make
+example/example.vcxproj
