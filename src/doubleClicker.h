@@ -30,11 +30,24 @@ public:
 	//--------------------------------------------------------------
 	void setDebug(bool b) {
 		bDebug = b;
-	}	
+	}
+
 	//--------------------------------------------------------------
 	void setAlpha(int a) {
 		alpha = a;
 	}	
+	//--------------------------------------------------------------
+	void setColorIDLE_COLOR(ofColor c) {
+		IDLE_COLOR = c;
+	}	
+	//--------------------------------------------------------------
+	void setColorOVER_COLOR(ofColor c) {
+		OVER_COLOR = c;
+	}	
+	//--------------------------------------------------------------
+	void setColorDOWN_COLOR(ofColor c) {
+		DOWN_COLOR = c;
+	}		
 	//--------------------------------------------------------------
 	void setColorDOUBLE1_COLOR(ofColor c) {
 		DOUBLE1_COLOR = c;
@@ -47,6 +60,7 @@ public:
 	void setColorDOUBLE3_COLOR(ofColor c) {
 		DOUBLE3_COLOR = c;
 	}
+
 	//--------------------------------------------------------------
 	bool isMouseDoubleClick() {
 		if (bDoubleClicked) {
@@ -65,13 +79,13 @@ public:
 	}
 
 	void setup() {
-		IDLE_COLOR = ofColor(100, alpha);
-		OVER_COLOR = ofColor(150, alpha);
-		DOWN_COLOR = ofColor(200, alpha);
-		DOUBLE1_COLOR = ofColor(ofColor::yellow, alpha);
-		DOUBLE2_COLOR = ofColor(ofColor::green, alpha);
-		DOUBLE3_COLOR = ofColor(ofColor::blue, alpha);
-		DOUBLE4_COLOR = ofColor(ofColor::black, alpha);
+		//IDLE_COLOR = ofColor(100, alpha);
+		//OVER_COLOR = ofColor(150, alpha);
+		//DOWN_COLOR = ofColor(200, alpha);
+		//DOUBLE1_COLOR = ofColor(ofColor::yellow, alpha);
+		//DOUBLE2_COLOR = ofColor(ofColor::green, alpha);
+		//DOUBLE3_COLOR = ofColor(ofColor::blue, alpha);
+		//DOUBLE4_COLOR = ofColor(ofColor::black, alpha);
 
 		ofLogVerbose(__FUNCTION__) << "hello!\n";
 		enableMouseEvents();
@@ -91,14 +105,13 @@ public:
 
 
 	void draw() {
+		ofPushStyle();
+
 		if (isMousePressed()) ofSetColor(DOWN_COLOR);
 		else if (isMouseOver()) ofSetColor(OVER_COLOR);
 		//else ofSetColor(IDLE_COLOR);
 
-		ofColor c;
-
 		auto t = ofGetElapsedTimeMillis();
-
 		switch (clickCounter)
 		{
 
@@ -124,7 +137,7 @@ public:
 		}
 		break;
 
-		case 4:
+		case 4://final wait
 		{
 			ofSetColor(DOUBLE4_COLOR);
 			clickCounter = 0;
@@ -134,6 +147,8 @@ public:
 		}
 
 		if (bDebug) ofRect(x, y, width, height);
+		
+		ofPopStyle();
 	}
 
 	virtual void onRollOver(int x, int y) {
