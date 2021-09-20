@@ -7,6 +7,10 @@
 
 #include "ofxMSAInteractiveObject.h"
 
+// time gaps
+#define TIME_GAP_MIN 50
+#define TIME_GAP_MAX 200 // lower is more precise but "difficult"
+
 class DoubleClicker : public ofxMSAInteractiveObject {
 private:
 	ofColor	IDLE_COLOR;
@@ -18,11 +22,12 @@ private:
 	ofColor	DOUBLE4_COLOR;
 	int alpha = 128;
 
+	int timerMin = TIME_GAP_MIN;
+	int timerMax = TIME_GAP_MAX;
+
 	bool bDoubleClicked = false;
 	bool bTripleClicked = false;
 	int timerClick = 0;
-	int timerMin = 50;
-	int timerMax = 300;
 	bool bDebug = true;
 
 public:
