@@ -1,6 +1,3 @@
-ofxMSAInteractiveObject
-=====================================
-
 ### Added on this modified FORK  
 Added DoubleClicker.h to handle double and triple mouse clicks.  
 I use this to enable or disable some editing, changing modes... on my ofApps.  
@@ -8,6 +5,9 @@ This class is an example:
 [TextBoxWidget.h](https://github.com/moebiussurfing/ofxSurfingHelpers/blob/master/src/widgets/TextBoxWidget.h)  
 
 ------------------------------------
+
+ofxMSAInteractiveObject
+=====================================
 
 Introduction
 ------------
